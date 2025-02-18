@@ -145,7 +145,7 @@ class TaskManager:
         self._crawling_data_module = crawling_data_module
         self._save_result_module = save_result_module
 
-        log_file_path = './log/'
+        log_file_path = '../log/'
         if not os.path.exists(log_file_path):
             os.makedirs(log_file_path)
         logging.basicConfig(filename=log_file_path + 'process.text', encoding='utf-8', level=log_level, filemode='w',

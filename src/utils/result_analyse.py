@@ -39,7 +39,7 @@ def analyse():
     other_holder = FundFolder(retain_num=other_shape_remain)
     manager_long_years_holder = FundFolder(retain_num=manager_long_remain)
 
-    with open('../result/result.csv', 'r', newline='', encoding='utf-8') as csvfile:
+    with open('../../result/result.csv', 'r', newline='', encoding='utf-8') as csvfile:
         # 读取数据
         reader: DictReader = DictReader(csvfile)
 

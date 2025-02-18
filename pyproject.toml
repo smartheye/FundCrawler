@@ -1,0 +1,23 @@
+[project]
+name = "fundcrawler"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.12.9"
+dependencies = [
+    "matplotlib>=3.10.0",
+    "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+    "stpyv8>=13.1.201.22",
+]
+
+[project.scripts]
+test_capital_case = "pytest stpyv8/test_parse_js_variable.py::test_capital_case"
+
+[tool.uv]
+package = false
+
+[tool.uv.pip]
+python = "3.12.9"
+python-version = "3.12.9"
