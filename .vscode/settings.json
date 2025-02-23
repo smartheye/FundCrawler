@@ -1,6 +1,13 @@
 {
     "editor.fontFamily": "'RobotoMono Nerd Font Mono', 'IBM Plex Mono', 'IBM Plex Sans SC', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "python.defaultInterpreterPath": ".venv/bin/python",
     "python.testing.pytestArgs": [
         "test"
@@ -15,5 +22,10 @@
     },
     "terminal.integrated.env.windows": {
         "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder}/src",
-    }
+    },
+    "notebook.defaultFormatter": "ms-python.autopep8",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.extraPaths": [
+        "src"
+    ]
 }

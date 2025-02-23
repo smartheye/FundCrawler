@@ -3,21 +3,36 @@ name = "fundcrawler"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "==3.12.9"
+requires-python = "==3.11.11"
 dependencies = [
+    "apscheduler>=3.11.0",
+    "dotenv>=0.9.9",
     "matplotlib>=3.10.0",
+    "psycopg2-binary>=2.9.10",
     "pytest>=8.3.4",
+    "python-arango>=8.1.4",
     "python-dotenv>=1.0.1",
     "requests>=2.32.3",
+    "sqlalchemy>=2.0.38",
+    "sqlalchemy-timescaledb>=0.4.1",
     "stpyv8>=13.1.201.22",
 ]
 
 [project.scripts]
 test_capital_case = "pytest stpyv8/test_parse_js_variable.py::test_capital_case"
 
+[project.optional-dependencies]
+
 [tool.uv]
 package = false
+dev-dependencies = [
+  "taskipy>=1.14.1",
+]
 
 [tool.uv.pip]
-python = "3.12.9"
-python-version = "3.12.9"
+python = "3.11.11"
+python-version = "3.11.11"
+
+[tool.taskipy.tasks]
+# PYTHONPATH=./tools/sqlacodegen
+codegen = "python ./tools/sqlacodegen/main.py"
