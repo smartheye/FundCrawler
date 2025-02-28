@@ -57,7 +57,7 @@ class FetchPublicFundTask(GeneralTask):
         with STPyV8.JSContext() as ctxt:
             ctxt.eval(text)
             vars = ctxt.locals
-            db = vars.db
+            db = vars.db    
             print(f'datas length = {len(db.datas)}, record={db.record}')
             for record in db.datas:
                 records.append(str(record).split(','))
@@ -128,6 +128,11 @@ def get_session():
 
 def get_float(text) -> float | None:
     try:
+        if isinstance(text, str):
+            if len(str(text)) == 0:
+                return None
+            if str(text) == '\'\'' or str(text) == '""':
+                return None
         f = float(text)
         return f
     except ValueError:
